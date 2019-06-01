@@ -34,11 +34,11 @@ var groupByCategory = (data)=>{
 
 
 function plotStatsCategories(data) {
-    //plotRatings(data);
-    //plotReviews(data);
+    plotReviews(data);
+    plotSizes(data);
     plotInstalls(data);
-    //plotPrices(data);
-   // plotSizes(data);
+    plotPrices(data);
+
 
 
 }
@@ -103,11 +103,11 @@ function plot_box(data){
 
 function histRating(data){
 
-    trace = [{
+    var trace = [{
         type:'histogram',
         x : data.map(d=>d.Rating),
     }];
-    layout = {
+    var layout = {
         title : {
             text : 'Rating Distribution',
             font: 25,
@@ -137,74 +137,96 @@ function histRating(data){
 
 
 function plotInstalls(data){
-    sorted = _.sortBy(data, d=>d.installs_mean);
-    trace = [{
+    var sorted = _.sortBy(data, d=>d.installs_mean);
+    var trace = [{
         type:'bar',
         y : sorted.map(d=>d.Category),
         x : sorted.map(d=>d.installs_mean),
         orientation: 'h'
     }];
 
-    layout = [];
 
-    Plotly.newPlot('installs_mean',trace)
+    var layout = {
+        title: {
+            text:'Categories vs Reviews',
+            font: {
+                family:'Arial',
+                size:24,
+            },
+        },
+        xaxis: {
+            title: {
+                text: 'x Axis',
+                font: {
+                    family: 'Courier New, monospace',
+                    size: 18,
+                    color: '#7f7f7f'
+                }
+            },
+        },
+        width : 600,
+        height: 600,
+        margin : {
+            l: 200,
+            r: 20,
+            t:100,
+            b: 100,
+            pad:3
+        }
+    };
+
+    Plotly.newPlot('installs_mean',trace,layout)
 
 }
 
 function plotPrices(data){
-    sorted = _.sortBy(data, d=>d.prices_mean);
-    trace = [{
+    var sorted = _.sortBy(data, d=>d.prices_mean);
+    var trace = [{
         type:'bar',
         y : sorted.map(d=>d.Category),
         x : sorted.map(d=>d.prices_mean),
         orientation: 'h'
     }];
 
-    layout = [];
+    var layout = {
+        width : 600,
+        height: 600,
+        margin : {
+            l: 200,
+            r: 20,
+            t:0,
+            b: 100,
+            pad:3
+        }
+    };
 
-    Plotly.newPlot('prices_mean',trace)
+    Plotly.newPlot('prices_mean',trace,layout)
 
 }
 
 function plotSizes(data){
-    sorted = _.sortBy(data, d=>d.sizeMega_mean);
-    trace = [{
-        type:'scatter',
-        mode:'markers',
+    var sorted = _.sortBy(data, d=>d.sizeMega_mean);
+    var trace = [{
+        type:'bar',
         y : sorted.map(d=>d.Category),
         x : sorted.map(d=>d.sizeMega_mean),
-        //orientation: 'h'
+
+        orientation: 'h'
     }];
 
-    layout = {
-        title: {
-            text:'App sizes',
-        },
-        xaxis : {
-            type:'log',
-            range: [0.9351436589130417,1.7220513371052903],
-            nticks : 6,
-            tickmode : 'auto',
-            showgrid :true,
-            fixedrange:true,
-            autorange :true,
-        },
-        yaxis: {
-            side: "left",
-            type: "category",
-            range: [
-                -0.2479,
-                34.66402375081093
-            ],
-            tickson: "labels",
-            autorange: false,
-            tickangle: "auto",
-            automargin: true,
-        },
-
-
-
+    var layout = {
+        title:{text:'Categories vs Reviewx'},
+        width : 600,
+        height: 600,
+        margin : {
+            l: 200,
+            r: 20,
+            t:0,
+            b: 100,
+            pad:3
+        }
     };
+
 
     Plotly.newPlot('sizeMega_mean',trace,layout)
 
@@ -214,76 +236,29 @@ function plotSizes(data){
 
 
 function plotReviews(data){
-    sorted = _.sortBy(data, d=>d.reviews_mean);
-    trace = [{
+    var sorted = _.sortBy(data, d=>d.reviews_mean);
+    var trace = [{
         type:'bar',
         y : sorted.map(d=>d.Category),
         x : sorted.map(d=>d.reviews_mean),
         orientation: 'h'
     }];
 
-    layout = {
+    var layout = {
+        title:{text:'Categories vs Reviewx'},
         width : 600,
-        height: 300,
-        margin: {
-            l:200,
+        height: 600,
+        margin : {
+            l: 200,
+            r: 20,
             t:0,
-            b:50,
-            r:500,
-            pad:6,
-            autoexpand: true,
-
-        },
-       // autosize: true,
-       /* title:{
-        text: 'Reviews vs Categories',
-        x : 0.42,
-        },
-       margin: {
-            l:200,
-            t:0,
-            b:50,
-            r:500,
-            pad:6,
-           autoexpand: true,
-
-        },
-        automargin:true,
-
-
-        xaxis: {
-            autorange:true,
-            //exponentformat:"SI",
-            //showexponent:"all",
-            //side:'bottom',
-            automargin:true,
-            //tickfont:{tickangle: "auto"},
-
-        },
-        yaxis:{
-           autorange:true,
-           automargin:true,
-           type:'category',
-           fixedrange:true,
-           tickfont : {size: 11, family: 'Arial'},
-           showgrid:true,
-            nticks: 38,
-
-        },
-        barmode:'overlay',
-        barnorm:'fraction',
-        bargap:0.86,
-        bargroupgap:0.55,
-        spikedistance:20,
-        hoverdistance:20,*/
-
-
-
-
-
-
+            b: 100,
+            pad:3
+        }
     };
 
-    Plotly.newPlot('reviews_mean',trace,layout)
 
-}
+    Plotly.newPlot('reviews_mean',trace,layout)
+    }
+
+
