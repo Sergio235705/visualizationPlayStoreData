@@ -1,6 +1,5 @@
 url = 'google_play_store_cleaned.csv';
 data = null;
-grouped_cat = null;
 
 window.onload = function () {
     getData(url,20);
