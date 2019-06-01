@@ -5,7 +5,9 @@ window.onload = function () {
     getData(url,20,function () {
 
         var groups = groupByCategory(data);
-        plotStatsCategories(groups)
+        //plotStatsCategories(groups);
+        histRating(data);
+        boxPlotCategories(data);
 
 
 
