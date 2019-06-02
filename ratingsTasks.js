@@ -36,7 +36,6 @@ function plot_ratings_reviews(data){
         marker: {
             color: '#2304EF',
             size: 4,
-            opacity: 0.7,
             line: {
                 color: 'darkblue',
                 width: 1,
@@ -96,8 +95,8 @@ function plot_ratings_download(data){
         name:"free apps",
         marker: {
             color: '#1B9908',
-            size: 2,
-            opacity:0.3,
+            size: 4,
+            opacity:0.4,
         },
     };
 
@@ -108,8 +107,8 @@ function plot_ratings_download(data){
         name:"paid apps",
         marker: {
             color: '#2304EF',
-            size: 4,
-            opacity: 0.4,
+            size: 6,
+            opacity: 0.7,
 
         },
 
@@ -131,7 +130,8 @@ function plot_ratings_download(data){
         yaxis: { title: "# Installs",type:"log"},
         legend:{size: 13, color:'#444', orientation:'v'},
         hovermode: false,
-        width:600, height:300,
+        width:600, height:500,
+
 
     };
 
@@ -176,7 +176,7 @@ function plot_ratings_price(data){
         xaxis: { title: "Rating",type:"log"},
         yaxis: { title: "Price(USD)",type:"log"},
         hovermode: false,
-        width:600, height:300,
+        width:600, height:500,
     };
 
 

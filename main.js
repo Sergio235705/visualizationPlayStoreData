@@ -8,6 +8,9 @@ window.onload = function () {
         histRating(data);
         plotStatsCategories(groups);
         boxPlotCategories(data);
+        plot_ratings_reviews(data);
+        plot_ratings_download(data);
+        plot_ratings_price(data);
 
 
     });
