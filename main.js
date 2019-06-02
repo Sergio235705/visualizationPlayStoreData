@@ -3,7 +3,10 @@ data = null;
 
 window.onload = function () {
     getData(url,10,function () {
-
+        $('#data').change(function () {
+            let t = tableToHtmlElement(_.sampleSize(data,$(this).val()));
+            $('#csv').html(t)
+        });
         var groups = groupByCategory(data);
         histRating(data);
         plotStatsCategories(groups);
@@ -22,7 +25,7 @@ function  getData(url,n,callback) {
         data = $.csv.toObjects(csv);
         // show first n values
         let table = tableToHtmlElement(_.sampleSize(data,n));
-        $("#csv").append(table);
+        $("#csv").html(table);
         callback()
     });
 
@@ -30,6 +33,7 @@ function  getData(url,n,callback) {
 
 function tableToHtmlElement(data) {
     let res = document.createElement("table");
+    res.setAttribute('cellspacing',0)
     let html = "<tr>";
     for (let h in data[0])
         if (data[0].hasOwnProperty(h))

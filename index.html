@@ -10,13 +10,17 @@
     <script src="categoriesTasks.js"></script>
     <script src="lodash.js"></script> <!-- lo dash-->
     <link rel="stylesheet" type="text/css" href="main_page.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 
 </head>
 <body>
+<header>
+    <h1 class="title">Google play store data</h1>
+</header>
 <article id="b">
-    <h1 id="title">Google play store data</h1>
     <p>In order to address the analysis of the Google Play store, we used a dataset provided on <a href="www.kaggle.com">Kaggle</a></p>
     <p>First, we cleaned the data by using Python libraries such as <em>Pandas</em> and <em>Numpy</em>. A sample of the dataset is shown below </p>
+    <p>Scegli la quantità di dati da mostrare: <input id="data" type="number" min="1" max="50" /></p>
     <section id = "csv"></section>
 </article>
 
@@ -36,15 +40,13 @@
 
 
 <table id="tab-categories">
-    <tr><td></td><td ></td></tr>
+    <tr><td><section id="reviews_mean"></section></td><td><section id="installs_mean"></section></td></tr>
+    <tr><td><section id="prices_mean"></section></td><td><section id="sizeMega_mean"></section></td></tr>
 </table>
 
 <div id="reviews_hist"></div>
 <p id="scrivi"></p>
-<div id="reviews_mean"></div>
-<div id="installs_mean"></div>
-<div id="prices_mean"></div>
-<div id="sizeMega_mean"></div>
+
 <div id="download-reviews"></div>
 
 
