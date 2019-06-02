@@ -108,11 +108,7 @@ function histRating(data){
         x : data.map(d=>d.Rating),
     }];
     var layout = {
-        title : {
-            text : 'Rating Distribution',
-            font: 25,
-
-        },
+        title: 'Rating Histogram',
         width : 600,
         height: 600,
         margin:{
@@ -131,7 +127,38 @@ function histRating(data){
 
     };
 
-    Plotly.newPlot('rating_mean',trace,layout)
+    Plotly.newPlot('rating_hist',trace,layout)
+
+}
+
+
+function histReviews(data){
+
+    var trace = [{
+        type:'histogram',
+        x : data.map(d=>d.Reviews),
+    }];
+    var layout = {
+        title: 'Reviews Histogram',
+        width : 600,
+        height: 600,
+        margin:{
+            pad	:	3,
+            r	:	10,
+            l	:	80,
+            t	:	100,
+            b	:	80,
+            autoexpand:true,
+
+        },
+        bargap	:	0.13,
+        bargroupgap	:	0.4,
+
+
+
+    };
+
+    Plotly.newPlot('reviews_hist',trace,layout)
 
 }
 
@@ -147,22 +174,9 @@ function plotInstalls(data){
 
 
     var layout = {
-        title: {
-            text:'Categories vs Reviews',
-            font: {
-                family:'Arial',
-                size:24,
-            },
-        },
+        title: 'Categories vs Installs',
         xaxis: {
-            title: {
-                text: 'x Axis',
-                font: {
-                    family: 'Courier New, monospace',
-                    size: 18,
-                    color: '#7f7f7f'
-                }
-            },
+            title: 'Installs'
         },
         width : 600,
         height: 600,
@@ -189,12 +203,16 @@ function plotPrices(data){
     }];
 
     var layout = {
+        title: 'Categories vs Prices',
+        xaxis: {
+            title: 'dollars ($)'
+        },
         width : 600,
         height: 600,
         margin : {
             l: 200,
             r: 20,
-            t:0,
+            t:100,
             b: 100,
             pad:3
         }
@@ -215,13 +233,16 @@ function plotSizes(data){
     }];
 
     var layout = {
-        title:{text:'Categories vs Reviewx'},
+        title: 'Categories vs Sizes',
+        xaxis: {
+            title: 'Megabite'
+        },
         width : 600,
         height: 600,
         margin : {
             l: 200,
             r: 20,
-            t:0,
+            t:100,
             b: 100,
             pad:3
         }
@@ -245,13 +266,17 @@ function plotReviews(data){
     }];
 
     var layout = {
-        title:{text:'Categories vs Reviewx'},
+        title:'Categories vs Reviewx',
+        xaxis:{
+            title: 'Reviews'
+        },
+
         width : 600,
         height: 600,
         margin : {
             l: 200,
             r: 20,
-            t:0,
+            t:100,
             b: 100,
             pad:3
         }

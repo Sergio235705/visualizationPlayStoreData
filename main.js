@@ -1,14 +1,13 @@
-url = 'play_store_cleaned.csv';
+url = 'google_play_store_cleaned.csv';
 data = null;
 
 window.onload = function () {
-    getData(url,20,function () {
+    getData(url,10,function () {
 
         var groups = groupByCategory(data);
         histRating(data);
         plotStatsCategories(groups);
         boxPlotCategories(data);
-
 
 
     });
@@ -19,9 +18,8 @@ function  getData(url,n,callback) {
     $.get(url,function (csv) {
         data = $.csv.toObjects(csv);
         // show first n values
-        let table = tableToHtmlElement(data.slice(0,n));
+        let table = tableToHtmlElement(_.sampleSize(data,n));
         $("#csv").append(table);
-
         callback()
     });
 
