@@ -8,10 +8,24 @@ window.onload = function () {
             $('#csv').html(t)
         });
 
-        plot_ratings_reviews(data);
-        plot_ratings_download(data);
-        plot_ratings_size(data);
-        plot_ratings_price(data);
+        $("#show_rating").click(function(){
+            plot_ratings_reviews(data);
+        });
+
+        $("#show_inst").click(function(){
+            plot_ratings_download(data);
+        });
+        $("#show_size").click(function(){
+             plot_ratings_size(data);
+        });
+        $("#show_price").click(function(){
+            plot_ratings_price(data);
+        });
+
+        //plot_ratings_reviews(data);
+        // plot_ratings_download(data);
+        // plot_ratings_size(data);
+        // plot_ratings_price(data);
 
 
     });

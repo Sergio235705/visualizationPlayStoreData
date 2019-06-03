@@ -3,75 +3,68 @@
  */
 
 
-function plot_ratings_reviews(data){
 
-    var nonzero = data.filter(d=>d.Price_dollar != 0);
-    var zero = data.filter(d=>d.Price_dollar == 0);
-    var rating_noz = nonzero.map(d=>d.Rating);
-    var reviews_noz = nonzero.map(d=>d.Reviews);
-    var rating_zer=  zero.map(d=>d.Rating);
-    var reviews_zer= zero.map(d=>d.Reviews);
+    function plot_ratings_reviews(data){
 
-
-
-    var trace_free = {
-        x: rating_zer, y: reviews_zer,
-        type:"scatter",
-        mode:"markers",
-        name:"free apps",
-        marker: {
-            color: '#1B9908',
-            size: 3,
-            opacity:0.4,
-        },
-    };
+        var nonzero = data.filter(d=>d.Price_dollar != 0);
+        var zero = data.filter(d=>d.Price_dollar == 0);
+        var rating_noz = nonzero.map(d=>d.Rating);
+        var reviews_noz = nonzero.map(d=>d.Reviews);
+        var rating_zer=  zero.map(d=>d.Rating);
+        var reviews_zer= zero.map(d=>d.Reviews);
 
 
-    var trace_paid = {
-        x:rating_noz, y: reviews_noz,
-        type: "scatter",
-        mode:"markers",
-        name:"paid apps",
-        marker: {
-            color: '#2304EF',
-            size: 4,
-            line: {
-                color: 'darkblue',
-                width: 1,
+
+        var trace_free = {
+            x: rating_zer, y: reviews_zer,
+            type:"scatter",
+            mode:"markers",
+            name:"free apps",
+            marker: {
+                color: '#1B9908',
+                size: 3,
                 opacity:0.4,
-            }
-
-        },
-
-    };
-
-
-    var layout = {
-        title: {
-            text:'Plot Title',
-            font: {
-                family: 'Courier New, monospace',
-                size: 24,
-                color: '#444',
             },
-            xref: 'paper',
-            x: 0.05,
-
-        },
-        xaxis: { title: "Rating"},
-        yaxis: { title: "# Reviews",type:"log"},
-        legend:{size: 13, color:'#444', orientation:'v'},
-        hovermode: false,
-        width:900, height:500,
-
-    };
+        };
 
 
+        var trace_paid = {
+            x:rating_noz, y: reviews_noz,
+            type: "scatter",
+            mode:"markers",
+            name:"paid apps",
+            marker: {
+                color: '#2304EF',
+                size: 4,
+                line: {
+                    color: 'darkblue',
+                    width: 1,
+                    opacity:0.4,
+                }
 
-   var  traces=[trace_paid,trace_free];
-    Plotly.newPlot("rating", traces, layout);
+            },
 
-}
+        };
+
+
+        var layout = {
+
+            xaxis: { title: "Rating"},
+            yaxis: { title: "# Reviews",type:"log"},
+            legend:{size: 13, color:'#444', orientation:'v'},
+            hovermode: false,
+            width:900, height:500,
+
+        };
+
+
+
+        var  traces=[trace_paid,trace_free];
+
+
+        Plotly.newPlot("rating", traces, layout);
+
+    }
 
 
 function plot_ratings_download(data){
@@ -113,17 +106,7 @@ function plot_ratings_download(data){
     };
 
     var layout = {
-        title: {
-            text:'Plot Title',
-            font: {
-                family: 'Courier New, monospace',
-                size: 24,
-                color: '#444',
-            },
-            xref: 'paper',
-            x: 0.05,
 
-        },
         xaxis: { title: "Rating"},
         yaxis: { title: "# Installs",type:"log"},
         legend:{size: 13, color:'#444', orientation:'v'},
@@ -179,17 +162,7 @@ function plot_ratings_size(data){
     };
 
     var layout = {
-        title: {
-            text:'Plot Title',
-            font: {
-                family: 'Courier New, monospace',
-                size: 24,
-                color: '#444',
-            },
-            xref: 'paper',
-            x: 0.05,
 
-        },
         xaxis: { title: "Rating"},
         yaxis: { title: "Size_Mega"},
         legend:{size: 13, color:'#444', orientation:'v'},
@@ -232,15 +205,7 @@ function plot_ratings_price(data){
     };
 
     var layout = {
-        title: {
-            text:'Plot Title',
-            font: {
-                family: 'Courier New, monospace',
-                size: 24
-            },
-            xref: 'paper',
-            x: 0.05,
-        },
+
         xaxis: { title: "Rating"},
         yaxis: { title: "Price(USD)",type:"log"},
         hovermode: false,
