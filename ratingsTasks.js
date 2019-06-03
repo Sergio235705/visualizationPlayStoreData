@@ -2,6 +2,7 @@
 @author: Massimiliano Sica
  */
 
+
 function plot_ratings_reviews(data){
 
     var nonzero = data.filter(d=>d.Price_dollar != 0);
@@ -61,13 +62,13 @@ function plot_ratings_reviews(data){
         yaxis: { title: "# Reviews",type:"log"},
         legend:{size: 13, color:'#444', orientation:'v'},
         hovermode: false,
-        width:600, height:500,
+        width:900, height:500,
 
     };
 
 
 
-    var traces=[trace_paid,trace_free];
+   var  traces=[trace_paid,trace_free];
     Plotly.newPlot("rating", traces, layout);
 
 }
@@ -82,7 +83,6 @@ function plot_ratings_download(data){
     var download_noz = nonzero.map(d=>d.Installs);
     var rating_zer=  zero.map(d=>d.Rating);
     var download_zer= zero.map(d=>d.Installs);
-
 
 
 
@@ -128,14 +128,14 @@ function plot_ratings_download(data){
         yaxis: { title: "# Installs",type:"log"},
         legend:{size: 13, color:'#444', orientation:'v'},
         hovermode: false,
-        width:600, height:500,
+        width:900, height:500,
 
 
     };
 
 
 
-   var traces=[trace_paid,trace_free];
+   var  traces=[trace_paid,trace_free];
     Plotly.newPlot("installs", traces, layout);
 
 }
@@ -149,6 +149,7 @@ function plot_ratings_size(data){
     var size_noz = nonzero.map(d=>d.Size_Mega);
     var rating_zer=  zero.map(d=>d.Rating);
     var size_zer= zero.map(d=>d.Size_Mega);
+
 
 
 
@@ -194,7 +195,7 @@ function plot_ratings_size(data){
         yaxis: { title: "Size_Mega"},
         legend:{size: 13, color:'#444', orientation:'v'},
         hovermode: false,
-        width:600, height:500,
+        width:900, height:500,
 
 
     };
@@ -208,44 +209,49 @@ function plot_ratings_size(data){
 
 
 
-// function plot_ratings_price(data){
-//
-//     var Rating = data.map(d=>d.Rating);
-//     var Price = data.map(d=>d.Price_dollar);
-//
-//
-//     var trace = {
-//
-//         x: Rating, y: Price,
-//
-//         type: "scatter",
-//         mode:"markers",
-//         marker: {
-//             color: 'green',
-//             size: 5,
-//             opacity:0.5,
-//         },
-//     };
-//
-//     var layout = {
-//         title: {
-//             text:'Plot Title',
-//             font: {
-//                 family: 'Courier New, monospace',
-//                 size: 24
-//             },
-//             xref: 'paper',
-//             x: 0.05,
-//         },
-//         xaxis: { title: "Rating",type:"log"},
-//         yaxis: { title: "Price(USD)",type:"log"},
-//         hovermode: false,
-//         width:600, height:500,
-//     };
-//
-//
-//     Plotly.plot("price", [trace], layout);
-//
-// }
+function plot_ratings_price(data){
+
+
+    Price=[];
+    classize=[1,2 ,3 ,4 ,5];
+    sizecat=["1-2","2-3","3-4","4-5"];
+    for(let i=0;i<classize.length-1;++i){
+        Price[i]=mean(_.flatMap(data.filter(d=>d.Rating>=classize[i]&& d.Rating<classize[i+1]&& d.Price_dollar!=0),s=>s.Price_dollar));
+    }
+
+
+    var trace = {
+
+        x: sizecat, y: Price,
+        type: "bar",
+        marker: {
+            color: 'greeen',
+            size: 6,
+            opacity: 0.6,
+
+        },
+    };
+
+    var layout = {
+        title: {
+            text:'Plot Title',
+            font: {
+                family: 'Courier New, monospace',
+                size: 24
+            },
+            xref: 'paper',
+            x: 0.05,
+        },
+        xaxis: { title: "Rating"},
+        yaxis: { title: "Price(USD)"},
+        hovermode: false,
+        width:900, height:500,
+    };
+
+
+    Plotly.plot("price", [trace], layout);
+
+
+}
 
 
