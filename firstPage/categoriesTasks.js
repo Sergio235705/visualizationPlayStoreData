@@ -97,7 +97,7 @@ function plot_box(data){
 
 
     };
-    Plotly.newPlot('box-plot',tracks,layout)
+    Plotly.newPlot('box-plot',tracks,layout,{responsive: true})
 }
 
 
@@ -106,6 +106,9 @@ function histRating(data){
     var trace = [{
         type:'histogram',
         x : data.map(d=>d.Rating),
+        marker: {
+            color: '#365769',
+        }
     }];
     var layout = {
         title: 'Rating Histogram',
@@ -127,7 +130,7 @@ function histRating(data){
 
     };
 
-    Plotly.newPlot('rating_hist',trace,layout)
+    Plotly.newPlot('rating_hist',trace,layout,{responsive:true});
 
 }
 
@@ -138,7 +141,10 @@ function plotInstalls(data){
         type:'bar',
         y : sorted.map(d=>d.Category),
         x : sorted.map(d=>d.installs_mean),
-        orientation: 'h'
+        orientation: 'h',
+        marker: {
+            color: '#365769',
+        }
     }];
 
 
@@ -170,7 +176,10 @@ function plotPrices(data){
         type:'bar',
         y : sorted.map(d=>d.Category),
         x : sorted.map(d=>d.prices_mean),
-        orientation: 'h'
+        orientation: 'h',
+        marker: {
+            color: '#365769',
+        }
     }];
 
     var layout = {
@@ -201,7 +210,10 @@ function plotSizes(data){
         y : sorted.map(d=>d.Category),
         x : sorted.map(d=>d.sizeMega_mean),
 
-        orientation: 'h'
+        orientation: 'h',
+        marker: {
+            color: '#365769',
+        }
     }];
 
     var layout = {
@@ -235,14 +247,17 @@ function plotReviews(data){
         type:'bar',
         y : sorted.map(d=>d.Category),
         x : sorted.map(d=>d.reviews_mean),
-        orientation: 'h'
+        orientation: 'h',
+        marker: {
+            color: '#365769',
+        }
     }];
 
     var layout = {
-        title:'Categories vs Reviewx',
+        title:'Categories vs Reviews',
         xaxis:{
             title: 'Reviews',
-            x:0.62,
+            x: 2,
         },
 
         width : 600,

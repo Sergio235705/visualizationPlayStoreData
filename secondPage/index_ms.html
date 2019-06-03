@@ -7,10 +7,9 @@
     <script src="https://oop.polito.it/js/jquery-3.2.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/0.71/jquery.csv-0.71.min.js"></script>
     <script src="main_ms.js"></script>
-    <script src="categoriesTasks.js"></script>
-    <script src="lodash.js"></script> <!-- lo dash-->
+    <script src="../lodash.js"></script> <!-- lo dash-->
     <script src="ratingsTasks.js"></script>
-    <link rel="stylesheet" type="text/css" href="main_page.css">
+    <link rel="stylesheet" type="text/css" href="../style/stylePage.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 
 
@@ -18,8 +17,9 @@
 </head>
 <body>
 <header>
-    <h1 class="title">Google play store data</h1>
+    <div><h1>Google play store data</h1></div>
 </header>
+
 <article class="front-page">
     <h2 class="text"><em><strong>Rating Analysis</strong></em> </h2>
 
@@ -29,7 +29,7 @@
         on a very small amount of reviews. What is of striking evidence at a first glance is that the highest number of reviews are related to ratings around 4.5. We can also notice
         the that the applications that require some kind of subscription or payment have a smaller amount of reviews and  have mainly positive ratings.
     </p>
-    <section id="rating"></section>
+    <section class="image" id="rating"></section>
 
     <h3 class="text"><em>Rating vs Downloads Analysis</em></h3>
     <p>
@@ -38,7 +38,7 @@
         paid app and that the rating strongly influences the decision of downloading. The curious aspect is that , as in the previous graph, we have a peak of installs around 4.5, and then  we start
         decreasing again. Paid apps follow a similar trend with less installs.
     </p>
-    <section id="installs"></section>
+    <section class="image" id="installs"></section>
 
     <h3 class="text"><em>Rating vs Size Analysis</em></h3>
     <p class="text">
@@ -46,15 +46,18 @@
         heavy apps have better ratings than light apps.
 
     </p>
-    <section id="size"></section>
+    <section class="image" id="size"></section>
 
     <h3 class="text"><em>Rating vs Price Analysis</em></h3>
     <p class="text">
         The analysis of this graphs leads us to the understanding of the relationship between ratings and price.
 
     </p>
-    <section id="price"></section>
-
+    <section  class="image" id="price"></section>
+    <form style=" overflow: hidden">
+        <input class="next-page-button" type="button" value="Next" onclick="window.location.href='#'" />
+        <input class="next-page-button" type="button" value="Back" onclick="window.location.href='../firstPage/index.html'" />
+    </form>
 </article>
 </body>
 </html>

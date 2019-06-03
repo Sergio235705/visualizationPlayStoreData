@@ -36,7 +36,7 @@ input{
 
 body{
     margin:0 !important;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto Slab', serif;
     background-color: whitesmoke;
 
 }
@@ -45,13 +45,36 @@ body{
     object-fit: fill;
     background-color: white;
     padding: 10px;
-    margin: 30px 10px 30px 10px;
+    margin: 30px 20px 30px 20px;
     position: relative;
+    border-radius: 3px;
+}
+.next-page-button{
+    background-color: #6897b1; /* Green */
+    border: solid;
+    border-radius: 9px;
+    color: white;
+    width: 100px;
+    padding: 10px 30px 10px 30px;
+    text-align: center;
+    text-decoration: none;
+    margin-left: auto;
+    margin-right: 0;
+    font-size: 16px;
+    display:inline-block;
+    line-height: 20px;
+    float:right;
+
+}
+.next-page-button:hover{
+    transition-duration: 0.4s;
+    background-color:#365769;
+
 }
 header {
     box-shadow: -1px 2px 9px -5px rgba(0,0,0,0.71);
     background: #365769;
-    padding: 2px 1px 2px 1px;
+    padding: 2px 1px 8px 1px;
     text-align: center;
     position: sticky;
     height: 40px;
@@ -61,11 +84,14 @@ header {
     text-justify: distribute;
 
 }
+p, label, h2, h3{
+    margin: 30px 100px 30px 100px;
+}
 
-header h1{
+header h1 {
+    margin: auto;
     text-align: center;
     text-transform: capitalize;
-    margin-top: 0;
 
 }
 
@@ -74,9 +100,10 @@ header h1{
     width: 100% !important;
 }
  .image{
-     margin: 0 auto;
+     margin-left: auto;
+     margin-right: auto;
      flex-direction: row;
-     width: 40%;
+     width: 50%;
      overflow: auto;
  }
 

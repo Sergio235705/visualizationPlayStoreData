@@ -1,4 +1,4 @@
-url = 'google_play_store_cleaned.csv';
+url = '../datasets/google_play_store_cleaned.csv';
 data = null;
 
 window.onload = function () {
