@@ -13,7 +13,7 @@ window.onload = function () {
         boxPlotCategories(data);
         plot_ratings_reviews(data);
         plot_ratings_download(data);
-        plot_ratings_price(data);
+        //plot_ratings_price(data);
 
 
     });
