@@ -132,37 +132,6 @@ function histRating(data){
 }
 
 
-function histReviews(data){
-
-    var trace = [{
-        type:'histogram',
-        x : data.map(d=>d.Reviews),
-    }];
-    var layout = {
-        title: 'Reviews Histogram',
-        width : 600,
-        height: 600,
-        margin:{
-            pad	:	3,
-            r	:	10,
-            l	:	80,
-            t	:	100,
-            b	:	80,
-            autoexpand:true,
-
-        },
-        bargap	:	0.13,
-        bargroupgap	:	0.4,
-
-
-
-    };
-
-    Plotly.newPlot('reviews_hist',trace,layout)
-
-}
-
-
 function plotInstalls(data){
     var sorted = _.sortBy(data, d=>d.installs_mean);
     var trace = [{
@@ -176,7 +145,9 @@ function plotInstalls(data){
     var layout = {
         title: 'Categories vs Installs',
         xaxis: {
-            title: 'Installs'
+            title: 'Installs',
+            x:0.62,
+
         },
         width : 600,
         height: 600,
@@ -205,7 +176,8 @@ function plotPrices(data){
     var layout = {
         title: 'Categories vs Prices',
         xaxis: {
-            title: 'dollars ($)'
+            title: 'dollars ($)',
+            x:0.82,
         },
         width : 600,
         height: 600,
@@ -235,7 +207,8 @@ function plotSizes(data){
     var layout = {
         title: 'Categories vs Sizes',
         xaxis: {
-            title: 'Megabite'
+            title: 'Megabite',
+            x:0.62,
         },
         width : 600,
         height: 600,
@@ -268,7 +241,8 @@ function plotReviews(data){
     var layout = {
         title:'Categories vs Reviewx',
         xaxis:{
-            title: 'Reviews'
+            title: 'Reviews',
+            x:0.62,
         },
 
         width : 600,
@@ -285,5 +259,7 @@ function plotReviews(data){
 
     Plotly.newPlot('reviews_mean',trace,layout)
     }
+
+
 
 

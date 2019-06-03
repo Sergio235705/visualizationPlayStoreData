@@ -7,13 +7,16 @@ window.onload = function () {
             let t = tableToHtmlElement(_.sampleSize(data,$(this).val()));
             $('#csv').html(t)
         });
+
         var groups = groupByCategory(data);
         histRating(data);
+        //TODO rendere simmetrico titolo barcharts
         plotStatsCategories(groups);
         boxPlotCategories(data);
-        plot_ratings_reviews(data);
-        plot_ratings_download(data);
-        //plot_ratings_price(data);
+
+
+
+
 
 
     });
@@ -51,4 +54,6 @@ function tableToHtmlElement(data) {
     res.innerHTML = html;
     return res;
 };
+
+
 

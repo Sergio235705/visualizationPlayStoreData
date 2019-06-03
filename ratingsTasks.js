@@ -2,7 +2,6 @@
 @author: Massimiliano Sica
  */
 
-
 function plot_ratings_reviews(data){
 
     var nonzero = data.filter(d=>d.Price_dollar != 0);
@@ -13,7 +12,6 @@ function plot_ratings_reviews(data){
     var reviews_zer= zero.map(d=>d.Reviews);
 
 
-    var traces=[];
 
     var trace_free = {
         x: rating_zer, y: reviews_zer,
@@ -69,7 +67,7 @@ function plot_ratings_reviews(data){
 
 
 
-    traces=[trace_paid,trace_free];
+    var traces=[trace_paid,trace_free];
     Plotly.newPlot("rating", traces, layout);
 
 }
@@ -86,7 +84,7 @@ function plot_ratings_download(data){
     var download_zer= zero.map(d=>d.Installs);
 
 
-    var traces=[];
+
 
     var trace_free = {
         x: rating_zer, y: download_zer,
@@ -137,7 +135,7 @@ function plot_ratings_download(data){
 
 
 
-    traces=[trace_paid,trace_free];
+   var traces=[trace_paid,trace_free];
     Plotly.newPlot("installs", traces, layout);
 
 }
@@ -153,7 +151,6 @@ function plot_ratings_size(data){
     var size_zer= zero.map(d=>d.Size_Mega);
 
 
-    var traces=[];
 
     var trace_free = {
         x: rating_zer, y: size_zer,
@@ -204,7 +201,7 @@ function plot_ratings_size(data){
 
 
 
-    traces=[trace_paid,trace_free];
+    var traces=[trace_paid,trace_free];
     Plotly.newPlot("size", traces, layout);
 
 }
