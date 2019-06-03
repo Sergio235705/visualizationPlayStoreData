@@ -63,7 +63,7 @@ function plot_ratings_reviews(data){
         yaxis: { title: "# Reviews",type:"log"},
         legend:{size: 13, color:'#444', orientation:'v'},
         hovermode: false,
-        width:700, height:550,
+        width:600, height:500,
 
     };
 
@@ -142,25 +142,43 @@ function plot_ratings_download(data){
 
 }
 
+function plot_ratings_size(data){
 
 
-function plot_ratings_price(data){
+    var nonzero = data.filter(d=>d.Price_dollar != 0);
+    var zero = data.filter(d=>d.Price_dollar == 0);
+    var rating_noz = nonzero.map(d=>d.Rating);
+    var size_noz = nonzero.map(d=>d.Size_Mega);
+    var rating_zer=  zero.map(d=>d.Rating);
+    var size_zer= zero.map(d=>d.Size_Mega);
 
-    var Rating = data.map(d=>d.Rating);
-    var Price = data.map(d=>d.Price_dollar);
 
+    var traces=[];
 
-    var trace = {
+    var trace_free = {
+        x: rating_zer, y: size_zer,
+        type:"scatter",
+        mode:"markers",
+        name:"free apps",
+        marker: {
+            color: '#1B9908',
+            size: 4,
+            opacity:0.4,
+        },
+    };
 
-        x: Rating, y: Price,
-
+    var trace_paid = {
+        x:rating_noz, y: size_noz,
         type: "scatter",
         mode:"markers",
+        name:"paid apps",
         marker: {
-            color: 'green',
-            size: 5,
-            opacity:0.5,
+            color: '#2304EF',
+            size: 6,
+            opacity: 0.6,
+
         },
+
     };
 
     var layout = {
@@ -168,18 +186,135 @@ function plot_ratings_price(data){
             text:'Plot Title',
             font: {
                 family: 'Courier New, monospace',
-                size: 24
+                size: 24,
+                color: '#444',
             },
             xref: 'paper',
             x: 0.05,
+
         },
-        xaxis: { title: "Rating",type:"log"},
-        yaxis: { title: "Price(USD)",type:"log"},
+        xaxis: { title: "Rating"},
+        yaxis: { title: "Size_Mega"},
+        legend:{size: 13, color:'#444', orientation:'v'},
         hovermode: false,
         width:600, height:500,
+
+
     };
 
 
-    Plotly.plot("price", [trace], layout);
+
+    traces=[trace_paid,trace_free];
+    Plotly.newPlot("size", traces, layout);
 
 }
+
+function plot_ratings_ver(data){
+
+
+    var nonzero = data.filter(d=>d.Price_dollar != 0);
+    var zero = data.filter(d=>d.Price_dollar == 0);
+    var rating_noz = nonzero.map(d=>d.Rating);
+    var ver_noz = nonzero.map(d=>d.Current Ver);
+    var rating_zer=  zero.map(d=>d.Rating);
+    var ver_zer= zero.map(d=>d.Current Ver);
+
+
+    var traces=[];
+
+    var trace_free = {
+        x: rating_zer, y: ver_zer,
+        type:"scatter",
+        mode:"markers",
+        name:"free apps",
+        marker: {
+            color: '#1B9908',
+            size: 4,
+            opacity:0.4,
+        },
+    };
+
+    var trace_paid = {
+        x:rating_noz, y: ver_noz,
+        type: "scatter",
+        mode:"markers",
+        name:"paid apps",
+        marker: {
+            color: '#2304EF',
+            size: 6,
+            opacity: 0.6,
+
+        },
+
+    };
+
+    var layout = {
+        title: {
+            text:'Plot Title',
+            font: {
+                family: 'Courier New, monospace',
+                size: 24,
+                color: '#444',
+            },
+            xref: 'paper',
+            x: 0.05,
+
+        },
+        xaxis: { title: "Rating"},
+        yaxis: { title: "Version",type:"log"},
+        legend:{size: 13, color:'#444', orientation:'v'},
+        hovermode: false,
+        width:600, height:500,
+
+
+    };
+
+
+
+    traces=[trace_paid,trace_free];
+    Plotly.newPlot("version", traces, layout);
+
+}
+
+
+// function plot_ratings_price(data){
+//
+//     var Rating = data.map(d=>d.Rating);
+//     var Price = data.map(d=>d.Price_dollar);
+//
+//
+//     var trace = {
+//
+//         x: Rating, y: Price,
+//
+//         type: "scatter",
+//         mode:"markers",
+//         marker: {
+//             color: 'green',
+//             size: 5,
+//             opacity:0.5,
+//         },
+//     };
+//
+//     var layout = {
+//         title: {
+//             text:'Plot Title',
+//             font: {
+//                 family: 'Courier New, monospace',
+//                 size: 24
+//             },
+//             xref: 'paper',
+//             x: 0.05,
+//         },
+//         xaxis: { title: "Rating",type:"log"},
+//         yaxis: { title: "Price(USD)",type:"log"},
+//         hovermode: false,
+//         width:600, height:500,
+//     };
+//
+//
+//     Plotly.plot("price", [trace], layout);
+//
+// }
+
+

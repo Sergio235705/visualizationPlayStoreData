@@ -20,6 +20,7 @@ window.onload = function () {
 
 };
 
+
 function  getData(url,n,callback) {
     $.get(url,function (csv) {
         data = $.csv.toObjects(csv);

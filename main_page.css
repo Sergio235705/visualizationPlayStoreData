@@ -41,7 +41,27 @@ header {
     z-index: 1;
     top:0;
 }
-h1.title {
-    text-align: center;
-    margin: .3%;
+
+h3{
+    color: #365769;
+    font-family:"Liberation Sans";
 }
+
+h2{
+    color: darkred;
+    font-family:"Liberation Sans";
+}
+
+p{
+    font-family: "mry_KacstQurn";
+    color: black;
+}
+ .image{
+     display: block;
+     margin-left: auto;
+     margin-right: auto;
+     width: 40%;
+ }
+ .text{
+     padding-left: 5px;
+ }

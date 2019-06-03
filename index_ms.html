@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<p lang="en">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Ratings Task </title>
@@ -10,27 +10,45 @@
     <script src="categoriesTasks.js"></script>
     <script src="lodash.js"></script> <!-- lo dash-->
     <script src="ratingsTasks.js"></script>
+    <link rel="stylesheet" type="text/css" href="main_page.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 
 
 
 </head>
-<h1>Rating Analysis </h1>
+    <body>
+    <header>
+        <h1 class="title">Google play store data</h1>
+    </header>
+    <h2 class="text"><em><strong>Rating Analysis</strong></em> </h2>
 
-<h2>Rating vs Reviews Analysis </h2>
-<p>
-<div id="rating" ></div>
+    <h3 class="text"><em>Rating vs Reviews Analysis</em> </h3>
+<p class="text">
+By analyzing the relationship between ratings and reviews it is immediate to notice that the most extreme rating values, like 5 or 1 are based
+    on a very small amount of reviews. What is of striking evidence at a first glance is that the highest number of reviews are related to ratings around 4.5. We can also notice
+    the that the applications that require some kind of subscription or payment have a smaller amount of reviews and  have mainly positive ratings.
 </p>
+    <div id="rating" class="image" ></div>
 
-<h2>Rating vs Downloads Analysis</h2>
+    <h3 class="text"><em>Rating vs Downloads Analysis</em></h3>
 <p>
-<div id="installs" ></div>
+The analysis of this graphs leads us to the understanding of the relationship between ratings and downloads. The objective of this visualization is to understand whether or not
+    people are interested in the rating of applications when it comes to choose which to download. As expected we can state with some accuracy that free apps are installed a lot more than
+    paid app and that the rating strongly influences the decision of downloading. The curious aspect is that , as in the previous graph, we have a peak of installs around 4.5, and then  we start
+    decreasing again. Paid apps follow a similar trend with less installs.
+</p>
+    <div id="installs"class="image" ></div>
+    <h3 class="text"><em>Rating vs Size Analysis</em></h3>
+<p class="text">
+    The analysis of this graphs leads us to the understanding of the relationship between ratings and size. The objective of this visualization is to understand whether or not
+    heavy apps have better ratings than light apps.
 
 </p>
+    <h3 class="text"><em>Rating vs Version Analysis</em></h3>
+    <p class="text">
+        The analysis of this graphs leads us to the understanding of the relationship between ratings and version.
 
-<h2>Rating vs Price Analysis</h2>
-<p>
-<div id="price"></div>
-</p>
-
+    </p>
+    <div id="version" class="image"></div>
 </body>
 </html>
