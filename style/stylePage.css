@@ -58,7 +58,7 @@ body{
     padding: 10px 1px 10px 1px;
     text-align: center;
     text-decoration: none;
-    margin-left: 5%;
+    margin-left: 8%;
 }
 
 .buttonGraph:hover{
@@ -123,6 +123,13 @@ header h1 {
      width: 50%;
      overflow: auto;
  }
+
+.imagems{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
 
 
  .text{
