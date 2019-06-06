@@ -186,8 +186,8 @@ function plot_ratings_price(data){
 
 
     Price=[];
-    classize=[1,2 ,3 ,4 ,5];
-    sizecat=["1-2","2-3","3-4","4-5"];
+    classize=[1,1.5,2,2.5,3,3.5,4,4.5,5];
+    sizecat=["1-1.5","1.5-2","2-2.5","2.5-3","3-3.5","3.5-4","4-4.5","4.5-5"];
     for(let i=0;i<classize.length-1;++i){
         Price[i]=mean(_.flatMap(data.filter(d=>d.Rating>=classize[i]&& d.Rating<classize[i+1]&& d.Price_dollar!=0),s=>s.Price_dollar));
     }
@@ -208,8 +208,7 @@ function plot_ratings_price(data){
     var layout = {
 
         xaxis: { title: "Rating"},
-        yaxis: { title: "Price(USD)",type:"log"},
-        hovermode: false,
+        yaxis: { title: "Price(USD)"},
         width:900, height:500,
     };
 
