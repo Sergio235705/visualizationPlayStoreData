@@ -10,14 +10,8 @@ window.onload = function () {
 
         var groups = groupByCategory(data);
         histRating(data);
-        //TODO rendere simmetrico titolo barcharts
         plotStatsCategories(groups);
         boxPlotCategories(data);
-
-
-
-
-
 
     });
 
