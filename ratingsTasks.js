@@ -173,7 +173,6 @@ function plot_ratings_size(data){
         marker: {
             color: '#2304EF',
             size: 6,
-            opacity: 0.6,
 
         },
 
