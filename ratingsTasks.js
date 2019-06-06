@@ -242,7 +242,7 @@ function plot_ratings_price(data){
             x: 0.05,
         },
         xaxis: { title: "Rating"},
-        yaxis: { title: "Price(USD)"},
+        yaxis: { title: "Price(USD)",type:"log"},
         hovermode: false,
         width:900, height:500,
     };
