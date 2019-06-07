@@ -101,7 +101,7 @@ header {
     text-justify: distribute;
 
 }
-p, label, h2, h3{
+p, label, h2, h3, h4{
     margin: 30px 100px 30px 100px;
 }
 
