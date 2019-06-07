@@ -155,8 +155,8 @@ function plotInstalls(data){
             x:0.62,
 
         },
-        width : 600,
-        height: 600,
+        width : 700,
+        height: 700,
         margin : {
             l: 200,
             r: 20,
@@ -176,6 +176,7 @@ function plotPrices(data){
         type:'bar',
         y : sorted.map(d=>d.Category),
         x : sorted.map(d=>d.prices_mean),
+        line: { width: 10 },
         orientation: 'h',
         marker: {
             color: '#365769',
@@ -188,8 +189,8 @@ function plotPrices(data){
             title: 'dollars ($)',
             x:0.82,
         },
-        width : 600,
-        height: 600,
+        width : 700,
+        height: 700,
         margin : {
             l: 200,
             r: 20,
@@ -222,8 +223,8 @@ function plotSizes(data){
             title: 'Megabite',
             x:0.62,
         },
-        width : 600,
-        height: 600,
+        width : 700,
+        height: 700,
         margin : {
             l: 200,
             r: 20,
@@ -260,8 +261,8 @@ function plotReviews(data){
             x: 2,
         },
 
-        width : 600,
-        height: 600,
+        width : 700,
+        height: 700,
         margin : {
             l: 200,
             r: 20,

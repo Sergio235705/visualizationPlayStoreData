@@ -39,6 +39,7 @@ body{
     font-family: 'Roboto Slab', serif;
     background-color: whitesmoke;
 
+
 }
 
 .front-page{
@@ -66,6 +67,8 @@ body{
     background-color:#365769;
 
 }
+
+
 .button{
     background-color: #6897b1;
     border: solid;
@@ -103,6 +106,7 @@ header {
 }
 p, label, h2, h3, h4{
     margin: 30px 100px 30px 100px;
+    font-size: x-large;
 }
 
 header h1 {
@@ -117,15 +121,24 @@ header h1 {
     width: 100% !important;
 }
  .image{
-     margin-left: auto;
-     margin-right: auto;
-     flex-direction: row;
-     width: 50%;
+     margin: 0 auto;
+     width:700px;
      overflow: auto;
  }
 
+ #rating_hist{
+     display: flex;
+     justify-content: center;
+     margin: 0 auto;
+     width:700px;
+     left:50%;
+
+
+ }
+
 .imagems{
-    display: block;
+    display: flex;
+    justify-content: center;
     margin-left: auto;
     margin-right: auto;
     width: 50%;
