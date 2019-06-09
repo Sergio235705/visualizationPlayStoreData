@@ -155,7 +155,7 @@ function plotInstalls(data){
             x:0.62,
 
         },
-        width : 700,
+        width : 600,
         height: 700,
         margin : {
             l: 200,
@@ -189,7 +189,7 @@ function plotPrices(data){
             title: 'dollars ($)',
             x:0.82,
         },
-        width : 700,
+        width : 600,
         height: 700,
         margin : {
             l: 200,
@@ -223,7 +223,7 @@ function plotSizes(data){
             title: 'Megabite',
             x:0.62,
         },
-        width : 700,
+        width : 600,
         height: 700,
         margin : {
             l: 200,
@@ -261,7 +261,7 @@ function plotReviews(data){
             x: 2,
         },
 
-        width : 700,
+        width : 600,
         height: 700,
         margin : {
             l: 200,

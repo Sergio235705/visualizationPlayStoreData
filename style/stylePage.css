@@ -16,7 +16,7 @@ table {
     border: 2px solid whitesmoke;
     padding-left:0;
     padding-right: 0;
-    width: 70%;
+    width: 100%;
 }
 tr{
     padding: 10px 0 10px 0;
@@ -36,20 +36,30 @@ input{
 
 body{
     margin:0 !important;
-    font-family: 'Roboto Slab', serif;
+    font-family: 'Roboto Slab', serif !important;
     background-color: whitesmoke;
-
 
 }
 
-.front-page{
+.front-page {
     object-fit: fill;
     background-color: white;
     padding: 10px;
-    margin: 30px 20px 30px 20px;
+    margin: 30px auto;
     position: relative;
     border-radius: 3px;
+    max-width: 90%;
 }
+
+#title, #title:visited ,#title:hover,#title:after{
+    text-decoration: none;
+    color: #fff;
+
+}
+
+
+
+            
 .buttonGraph{
     background-color: #6897b1;
     border: solid;
@@ -104,7 +114,7 @@ header {
     text-justify: distribute;
 
 }
-p, label, h2, h3, h4{
+p, h2, h3, h4{
     margin: 30px 100px 30px 100px;
     font-size: x-large;
 }
@@ -126,6 +136,10 @@ header h1 {
      overflow: auto;
  }
 
+ label{
+     margin: 30px 10px 30px 100px;
+     font-size: x-large;
+ }
  #rating_hist{
      display: flex;
      justify-content: center;

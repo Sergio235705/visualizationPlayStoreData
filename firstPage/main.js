@@ -8,6 +8,7 @@ window.onload = function () {
             $('#csv').html(t)
         });
 
+
         var groups = groupByCategory(data);
         histRating(data);
         plotStatsCategories(groups);
