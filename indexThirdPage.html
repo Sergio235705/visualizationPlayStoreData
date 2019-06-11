@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cross-Sectional Analysis</title>
+    <script src="https://oop.polito.it/js/plotly-latest.min.js"></script>
+    <script src="https://oop.polito.it/js/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/0.71/jquery.csv-0.71.min.js"></script>
+    <script src="mainThirdPage.js"></script>
+    <script src="ThirdPage.js"></script>
+    <script src="../firstPage/categoriesTasks.js"></script>
+    <script src="../lodash.js"></script> <!-- lo dash-->
+
+ <link rel="stylesheet" type="text/css" href="../style/stylePage.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300&display=swap" rel="stylesheet">
+    <style >
+
+
+        td.Paragraph{
+            margin-top: 0px;
+            font-size: medium;
+            text-align: left;
+            font-family: 'Roboto Slab', serif !important;
+            padding-left: 50px;
+            padding-right: 100px;
+
+
+        }
+
+        td.Graph{
+            width: 40%;
+
+            padding-left: 40px;
+            padding-right: 0px;
+
+        }
+        table{
+             margin-left: 0px;
+            margin-right: 80px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            border-style: none;
+        }
+
+
+    </style>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet"> -
+
+</head>
+<body>
+<header>
+    <div><h1 ><a id ='title' href="../firstPage/index.html">Google play store data</a></h1></div>
+</header>
+
+<article class="front-page">
+<h2 class="text" style="font-size: x-large"><em>Cross-Sectional Analysis</em></h2>
+<div id="Rating-Size"></div>
+<h2 class="text"><em>Rating vs Size Analysis</em> </h2>
+<p class="Paragraf"> Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+    accusantium doloremque laudantium, totam rem
+    aperiam eaque ipsa, quae ab illo inventore veritatis
+    et quasi architecto beatae vitae dicta sunt, explicabo.
+    Ut enim ad minima veniam, quis nostrum exercitationem ullam
+    corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure
+    reprehenderit, qui in ea voluptate velit esse.</p>
+<table cellspacing=0> <tr>
+    <td class="Graph"> <div id="Download-Size" ></div> </td>
+
+<td class="Paragraph">
+    <h2 class="text" style="margin-right: 0px;margin-left: 0px"><em>Download vs Size Analysis</em> </h2>
+    Ut enim ad minima veniam, quis nostrum exercitationem ullam
+    corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure
+    reprehenderit, qui in ea voluptate velit esse,
+    quam nihil molestiae consequatur, vel illum, qui dolorem eum fugiat, quo voluptas nulla pariatur?</td>
+</tr>
+</table>
+<h3 class="text" ><em>Rating vs Version Analysis</em> </h3>
+<p class="Paragraf"> Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur
+    aut odit aut fugit, sed quia consequuntur magni dolores eos,
+    qui ratione voluptatem sequi nesciunt, neque porro quisquam est, qui dolorem ipsum, quia dolor sit,
+    amet, consectetur, adipisci velit,
+    sed quia non numquam eius modi tempora incidunt, ut labore et dolore magnam aliquam quaerat voluptatem.</p>
+
+<div id="rating-version" ></div>
+
+<div id="download-version"></div>
+<h4 class="text"><em>Version vs Download Analysis</em> </h4>
+<p class="Paragraf">Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam,
+    nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit, qui in ea voluptate velit esse,
+    quam nihil molestiae consequatur, vel illum, qui dolorem eum fugiat, quo voluptas nulla pariatur? </p>
+
+<form style=" overflow: hidden">
+    <input class="button"  type="button" value="Home" onclick="window.location.href='../firstPage/index.html'" />
+    <input class="button" type="button" value="Back" onclick="window.location.href='../secondPage/index_ms.html'" />
+</form>
+    </article>
+</body>
+</html>
