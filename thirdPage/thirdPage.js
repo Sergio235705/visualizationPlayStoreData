@@ -8,7 +8,7 @@ download1=null;
 rating1=null;
 num=1;
 
-
+const mean = arr =>arr.reduce( (p,c) => +p + (+c),0)/arr.length;
 function plotGraphThirdPage(data)
 {
  //plot Size-Rating-Categories of Version
@@ -127,22 +127,35 @@ function plotGraphThirdPage(data)
                 //Plot Average Line
     tracksDS=[{x:xref,y:Sizecat,line:{color:"darkorange",dash:"dash"},type:"scatter",mode:"lines",hoverinfo:"none"},
                { x: downloadM,y: Sizecat,
+
             type: "bar",
                orientation:'h',
                marker :{
                width: 2,
-               opacity: 0.6,
+               opacity: 1,
                    color: 'lightgreen'
                }
-    }];
+    },{
+        x:valueR,y:Sizecat,
+            xaxis:'x2',
+            type: "bar",
+            orientation:'h',
+            marker :{
+                width: 5,
+                opacity: 0.6,
+                color: 'lightgreen'
+            }
+        }];
 
     layoutDS={
-        xaxis:{title:"Download"},
-        yaxis:{title:"Size"},
+        xaxis:{title:"Download",domain:[0.45,1]},
+        xaxis2:{title:"Rating",autorange: 'reversed',domain:[0,0.45]},
+        yaxis:{position:0.4},
+        hovermode: "y",
         height : 350,
-        width: 550,
+        width: 600,
         margin:{
-            l	:   80,
+            l	:   40,
             r	:	0,
             t	:	60,
             b	:	60,
@@ -155,27 +168,53 @@ function plotGraphThirdPage(data)
             ax:80,ay:20,
         }],
         showlegend: false
+        /*barmode: 'group',
+        bargap: 0.1,
+        bargroupgap: 0*/
 
 
-    };  //Add Info Average Rating
-    for(let i=0; i<Sizecat.length; ++i){
-        if(i>=2)
-        str="Average Rating: "+ valueR[i].toFixed(2);
-        else
-            str=valueR[i].toFixed(2);
+    };
+
+    layoutDS.annotations.push({
+        x: downloadM[3],
+        y: Sizecat[3],
+        text: downloadM[3].toFixed(0),
+        xanchor: 'right',
+        showarrow: false,
+        font: {color: 'white'}
+    });//Add Direct label data
+   /*for(let i=0; i<Sizecat.length; ++i) {
+
+            str = valueR[i].toFixed(2);
+
+            str = downloadM[i].toFixed(2);
 
         layoutDS.annotations.push({
             x: downloadM[i],
             y: Sizecat[i],
             text: str,
-            xanchor:'right',
-            showarrow:false,
-            font: {color:'black'}
+            xanchor: 'right',
+            showarrow: false,
+            font: {color: 'black'}
         });
-    }
+    } */
+       /* for(let i=0; i<Sizecat.length; ++i){
+
+                str=valueR[i].toFixed(2);
+
+            layoutDS.annotations.push({
+                x:0,
+                y: Sizecat[i],
+                xshift:-70,
+                text: str,
+                xanchor:'center',
+                showarrow:false,
+                font: {color:'black'}
+            });
+    }*/
 
 
-    plot1=Plotly.newPlot("Download-Size",tracksDS,layoutDS,{displayModeBar: false});
+    plot1=Plotly.newPlot("Download-Size",tracksDS,layoutDS/*,{displayModeBar: false}*/);
 
 
 
