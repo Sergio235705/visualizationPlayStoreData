@@ -1,1 +1,3 @@
-# viq_project
+# Visualization Project - PoliTO
+
+
