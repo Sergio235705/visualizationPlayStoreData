@@ -11,7 +11,7 @@ We used a dataset on <a href="https://www.kaggle.com/lava18/google-play-store-ap
 * Lodash
 * Plotly
 
-Using static webpages on github does result in a problem in the initial table plot & histogram. However, the last two pages contain the most interesting visualizations of the data.
+Using static webpages on github does result in a problem in the initial table plot & histogram. However, the last two pages contain the most interesting visualizations of the data. 
 Hope you enjoy it!
 
 
