@@ -6,10 +6,10 @@
     <script src="https://oop.polito.it/js/plotly-latest.min.js"></script>
     <script src="https://oop.polito.it/js/jquery-3.2.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/0.71/jquery.csv-0.71.min.js"></script>
-    <script src="main.js"></script>
-    <script src="categoriesTasks.js"></script>
-    <script src="../lodash.js"></script> <!-- lo dash-->
-    <link rel="stylesheet" type="text/css" href="../CSS/style.css">
+    <script src="firstPage/main.js"></script>
+    <script src="firstPage/categoriesTasks.js"></script>
+    <script src="lodash.js"></script> <!-- lo dash-->
+    <link rel="stylesheet" type="text/css" href="CSS/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -23,7 +23,7 @@
 
 <article id="b">
     <p> This is a report based on  <a href="https://www.kaggle.com/lava18/google-play-store-apps">Kaggle</a> dataset about Google play store application.
-    The dataset contained <em>NaN</em>, <em>missing values</em> or <em>invalid strings</em>, therefore we had to clean it first by using Python libraries such as Pandas and Numpy (View <a href="dataPreprocessing.html">notebook</a>).<br>
+    The dataset contained <em>NaN</em>, <em>missing values</em> or <em>invalid strings</em>, therefore we had to clean it first by using Python libraries such as Pandas and Numpy (View <a href="firstPage/dataPreprocessing.html">notebook</a>).<br>
     It is possible to see a sample below.
     </p>
     <label for="data">Number of rows:</label><input id="data" type="number" min="1" max="50" value="10" /></label>
@@ -60,7 +60,7 @@
 <div id="download-reviews"></div>
 
     <form style=" overflow: hidden">
-        <input class="button" type="button" value="next" onclick="window.location.href='../secondPage/index_ms.html'" />
+        <input class="button" type="button" value="next" onclick="window.location.href='secondPage/index_ms.html'" />
     </form>
 </article>
 
