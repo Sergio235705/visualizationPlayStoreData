@@ -1,11 +1,12 @@
-url = '../datasets/google_play_store_cleaned.csv';
+//url = '../datasets/google_play_store_cleaned.csv';
+url = 'https://mega.nz/file/J1lwzBCb#5B_6C7xIqf8p7ry8mLhnyu4OKhm-eBVIXSIr0b0yNJM'
 data = null;
 
 window.onload = function () {
     getData(url,10,function () {
         $('#data').change(function () {
-            //let t = tableToHtmlElement(_.sampleSize(data,$(this).val()));
-            //$('#csv').html(t)
+            let t = tableToHtmlElement(_.sampleSize(data,$(this).val()));
+            $('#csv').html(t)
         });
 
 
