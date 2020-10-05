@@ -1,5 +1,7 @@
+
 #csv tr:nth-child(even) {background: WhiteSmoke}
 #csv tr:nth-child(odd) {background: #FFF}
+
 table, th, td {
     padding: 15px;
     text-align: center;
