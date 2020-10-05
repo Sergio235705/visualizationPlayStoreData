@@ -4,8 +4,8 @@ data = null;
 window.onload = function () {
     getData(url,10,function () {
         $('#data').change(function () {
-            let t = tableToHtmlElement(_.sampleSize(data,$(this).val()));
-            $('#csv').html(t)
+            //let t = tableToHtmlElement(_.sampleSize(data,$(this).val()));
+            //$('#csv').html(t)
         });
 
 
