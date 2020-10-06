@@ -1,5 +1,5 @@
-//url = '../datasets/google_play_store_cleaned.csv';
-url = 'https://mega.nz/file/J1lwzBCb#5B_6C7xIqf8p7ry8mLhnyu4OKhm-eBVIXSIr0b0yNJM'
+url = '../datasets/google_play_store_cleaned.csv';
+//url = 'https://mega.nz/file/J1lwzBCb#5B_6C7xIqf8p7ry8mLhnyu4OKhm-eBVIXSIr0b0yNJM'
 data = null;
 
 window.onload = function () {
